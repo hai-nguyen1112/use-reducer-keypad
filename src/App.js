@@ -82,7 +82,7 @@ function App() {
                         <FontAwesomeIcon icon={faLockOpen} style={{color: "red", fontSize: "50px"}}/>
                 }
             </p>
-            <div>Press the keypad in the sequence of {password} to unlock!</div>
+            <div style={{textAlign: "center"}}>Press the keypad in the sequence of {password} to unlock!</div>
             <p>
                 <button ref={buttonOneRef} onClick={() => handleClickKeyPad(1)}>1</button>
                 &nbsp; &nbsp;

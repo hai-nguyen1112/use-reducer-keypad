@@ -41,7 +41,7 @@ function App() {
                 congrats = setTimeout(() => {
                     setLocked(false)
                     promptRef.current.innerText = "Good Job!"
-                }, 2000)
+                }, 1000)
             }
         } else {
             disableKeypad(buttonOneRef, buttonTwoRef, buttonThreeRef, buttonFourRef, buttonFiveRef, buttonSixRef)

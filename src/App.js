@@ -83,6 +83,10 @@ function App() {
                 }
             </p>
             <div style={{textAlign: "center"}}>Press the keypad in the sequence of {password} to unlock!</div>
+            <br/>
+            <div style={{border: "solid 2px", borderRadius: "5px", height: "40px", width: "160px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <h3 ref={promptRef}>{""}</h3>
+            </div>
             <p>
                 <button ref={buttonOneRef} onClick={() => handleClickKeyPad(1)}>1</button>
                 &nbsp; &nbsp;
@@ -96,9 +100,6 @@ function App() {
                 &nbsp; &nbsp;
                 <button ref={buttonSixRef} onClick={() => handleClickKeyPad(6)}>6</button>
             </p>
-            <div style={{border: "solid 2px", borderRadius: "5px", height: "40px", width: "160px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h3 ref={promptRef}>{""}</h3>
-            </div>
             <p>
                 <button ref={resetButtonRef} onClick={handleReset}>Reset</button>
             </p>

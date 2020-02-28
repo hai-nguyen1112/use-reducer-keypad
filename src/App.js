@@ -100,9 +100,7 @@ function App() {
                 &nbsp; &nbsp;
                 <button ref={buttonSixRef} onClick={() => handleClickKeyPad(6)}>6</button>
             </p>
-            <p>
-                <button ref={resetButtonRef} onClick={handleReset}>Reset</button>
-            </p>
+            <button ref={resetButtonRef} onClick={handleReset}>Reset</button>
         </div>
     )
 }

@@ -32,12 +32,16 @@ function App() {
 
     useEffect(() => {
         let handleWrongPassword
+        let congrats
         promptingPressedNumber(sequence[sequence.length - 1], promptRef)
         if (sequence[sequence.length - 1] === password[sequence.length - 1]) {
             if (sequence.length === 6) {
-                setLocked(false)
-                promptRef.current.innerText = "Good Job!"
+                promptRef.current.innerText = sequence.join("")
                 disableKeypad(buttonOneRef, buttonTwoRef, buttonThreeRef, buttonFourRef, buttonFiveRef, buttonSixRef)
+                congrats = setTimeout(() => {
+                    setLocked(false)
+                    promptRef.current.innerText = "Good Job!"
+                }, 2000)
             }
         } else {
             disableKeypad(buttonOneRef, buttonTwoRef, buttonThreeRef, buttonFourRef, buttonFiveRef, buttonSixRef)
@@ -48,7 +52,7 @@ function App() {
                 enableKeypad(buttonOneRef, buttonTwoRef, buttonThreeRef, buttonFourRef, buttonFiveRef, buttonSixRef)
             }, 2000)
         }
-        return () => clearTimeout(handleWrongPassword)
+        return () => clearTimeout(handleWrongPassword, congrats)
     }, [sequence, password])
 
     useEffect(() => {
